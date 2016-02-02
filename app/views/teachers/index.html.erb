@@ -1,0 +1,30 @@
+<h1>OUR TEACHERS</h1>
+
+
+
+  <div class="row">
+    <% @teachers.each do |teacher| %>
+      <div class= "col-md-4">
+        <div class="panel panel-default">
+          <div class= "panel-body">
+
+
+
+        <h2><%= teacher.name %></h2>
+        <h3>age:  <%= teacher.age %></h3>
+        <p> kung fu style: <%= teacher.kfstyle %></p>
+
+        <div class="btn-group">
+        <%= link_to 'Show', teacher, class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_teacher_path(teacher), class: "btn btn-default" %>
+        <%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
+</div>
+    <% end %>
+ </div>
+
+<br>
+
+<%= link_to 'New Teacher', new_teacher_path, class: "btn btn-success" %>
